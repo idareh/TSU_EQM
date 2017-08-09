@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<setupconfig>
+<dbtype>mssql</dbtype>
+<dsn>localcon</dsn>
+<user>finn</user>
+<pwd>financetsu</pwd>
+<dbsystem>TSUFinance</dbsystem>
+<dbtemp>TSUFinnTemp</dbtemp>
+</setupconfig>
