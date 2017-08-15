@@ -169,7 +169,7 @@
 			$_SESSION['alabinkpos'] = array("ฝากระป๋อง","ก้นกระป๋อง");
 			
 			
-			
+			/*
 			$_SESSION['issupervisor'] = odbc_result($result, "issupervisor");
 			// read application 
 			$query = "select name from ".$systemdb.".dbo.application where id=".$appid;
@@ -213,6 +213,7 @@
 			$result	=  odbc_Exec($conn,$query);
 			$_SESSION['loginwhen'] = odbc_result($result, "loginwhen");
 			$_SESSION['nodeid'] = odbc_result($result, "nodeid");
+			*/
 			//echo $mysession;
 			//echo "<br>";
 			//echo $_SESSION['userid'];

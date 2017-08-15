@@ -1,3 +1,8 @@
+<?php
+	//---- INCLUDE session ***
+	include("../eqmlib/eqmsession.php");
+	
+	?>
 <!DOCTYPE html>
 <html>
 <head>

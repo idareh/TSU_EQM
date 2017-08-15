@@ -97,8 +97,8 @@
 			$_SESSION['dsn']		= $dsn;
 			$_SESSION['dbuser']		= $user;
 			$_SESSION['pwd']		= $pwd;
-			$_SESSION['systemdb']	= $systemdb;
-			$_SESSION['tempdb']		= $tempdb;
+			$_SESSION['systemdb']	= $systemdb.".dbo.";
+			$_SESSION['tempdb']		= $tempdb.".dbo.";
 			$_SESSION['issupervisor'] = odbc_result($result, "issupervisor");
 			
 			header("Location: eqmcommon/index.php?mysession=".$mysession);
