@@ -42,47 +42,47 @@
                 <div class="col-md-12">
                     <div class="box box-success">
                         <div class="box-header with-border">
-                            <h3 class="box-title">ตรวจสอบครุภัณฑ์</h3>
+                            <h3 class="box-title">��Ǩ�ͺ����ѳ��</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
                             <form role="form">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>รหัสบาร์โค้ด</label>
+                                        <label>���ʺ�����</label>
                                         <input type="text" class="form-control" placeholder="Enter ..." autofocus>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label>หน่วยงาน</label>
+                                        <label>˹��§ҹ</label>
                                         <input type="text" class="form-control" readonly>
                                     </div>
                                     <div class="form-group">
-                                        <label>ประเภทสินทรัพย์</label>
+                                        <label>�������Թ��Ѿ��</label>
                                         <input type="text" class="form-control" readonly>
                                     </div>
                                     <div class="form-group">
-                                        <label>ชนิดสินทรทัพย์</label>
+                                        <label>��Դ�Թ�÷Ѿ��</label>
                                         <input type="text" class="form-control" readonly>
                                     </div>
                                     <div class="form-group">
-                                        <label>ลักษณะสินทรัพย์</label>
+                                        <label>�ѡɳ��Թ��Ѿ��</label>
                                         <input type="text" class="form-control" readonly>
                                     </div>
                                     <div class="form-group">
-                                        <label>เลขที่เอกสาร</label>
+                                        <label>�Ţ����͡���</label>
                                         <input type="text" class="form-control" readonly>
                                     </div>
                                     <div class="form-group">
-                                        <label>รหัสครุภัณฑ์</label>
+                                        <label>���ʤ���ѳ��</label>
                                         <input type="text" class="form-control" readonly>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12"></div>
                                 <div class="col-md-12 text-center">
-                                    <button class="btn btn-success"><i class="fa fa-save"></i> บันทึกข้อมูล</button>
-                                    <button class="btn btn-danger"><i class="fa fa-close"></i> ยกเลิก</button>
+                                    <button class="btn btn-success"><i class="fa fa-save"></i> �ѹ�֡������</button>
+                                    <button class="btn btn-danger"><i class="fa fa-close"></i> ¡��ԡ</button>
                                 </div>
                             </form>
                         </div>

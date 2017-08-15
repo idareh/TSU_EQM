@@ -38,7 +38,7 @@
                 <small>Version 1.0.0</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> หน้าหลัก</a></li>
+                <li><a href="#"><i class="fa fa-dashboard"></i> ˹����ѡ</a></li>
             </ol>
         </section>
 

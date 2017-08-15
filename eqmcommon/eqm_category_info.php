@@ -1,12 +1,7 @@
 <?php
 	//---- INCLUDE session ***
 	include("../eqmlib/eqmsession.php");
-	
-	$dsn			= $_SESSION['dsn'];
-	$user			= $_SESSION['dbuser'];
-	$pwd			= $_SESSION['pwd'];
-	$getdbname 		= $_SESSION['systemdb'];
-	$conn			=  odbc_connect($dsn,$user,$pwd);
+	require('../eqmlib/phpclass.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,13 +36,7 @@
 
 
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                <b>FINANCE</b>DPT
-                <small>Version 1.0.0</small>
-            </h1>
-        </section>
+     
 
         <!-- Main content -->
         <section class="content">
@@ -56,49 +45,47 @@
                 <div class="col-md-12">
                     <div class="box box-success">
                         <div class="box-header with-border">
-                            <h3 class="box-title">‡∏õ‡∏£‡∏∞‡πÄ‡∏†‡∏ó‡∏Ñ‡∏£‡∏∏‡∏†‡∏±‡∏ì‡∏ë‡πå</h3>
+                            <h3 class="box-title">ª√–‡¿∑§√ÿ¿—≥±Ï</h3>
                         </div>
                         <!-- /.box-header -->
                       <br>
+					
+					<div class="row">
+						<div class="col-md-1"></div>
+						<div class="col-md-10">
+					
 					  <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Position</th>
-						<th>Office</th>
-						<th>Age</th>
-					</tr>
-				</thead>
-				<tfoot>
-					<tr>
-						<th>Name</th>
-						<th>Position</th>
-						<th>Office</th>
-						<th>Age</th>
-					</tr>
-				</tfoot>
+						<thead>
+							<tr>
+								<th class="text-center">√À— </th>
+								<th class="text-center">™◊ËÕª√–‡¿∑§√ÿ¿—≥±Ï</th>
+								<th class="text-center"> ∂“π–°“√„™Èß“π</th>
+							</tr>
+						</thead>
 				<tbody>
-				<?php
-						$cmd = "SELECT  * FROM  ".$getdbname."eqm_category where DelBy is null";
+				<?php	
+
+				
+						$cmd  = "SELECT  c.no, c.name, st.no as stno ";
+						$cmd .= "FROM  ".getdbname("eqm_category","c")." ";
+						$cmd .= "left join ".getdbname("status","st")." on st.id = c.status ";
+						$cmd .= "where c.DelBy is null";
 						$catg = odbc_Exec($conn,$cmd);
-						//$dbcat = dbarray($catg);
-						$i= odbc_num_fields($catg);
-						echo $i;
-						echo count($dbcat["id"]);
-						for($i=0;$i<count($dbcat["id"]);$i++){
+						while($Result = odbc_fetch_array($catg))
+                        {
 				?>
 					<tr>
-						<td><?php echo $dbcat["status"]; ?></td>
-						<td><?php echo $dbcat["no"]; ?></td>
-						<td><?php echo $dbcat["name"]; ?></td>
-						<td><?php echo $dbcat["id"]; ?></td>
+						<td ><?php echo $Result["no"]; ?></td>
+						<td><?php echo $Result["name"]; ?></td>
+						<td class="text-center"><?php echo $Result["stno"]; ?></td>
 					</tr>
 						<?php } ?>
 					
 				</tbody>
 			</table>
-					  
-					  
+					  </div>
+					  </div>
+					  <br>
                         <!-- /.box-body -->
                     </div>
                 </div>

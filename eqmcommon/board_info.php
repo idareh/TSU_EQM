@@ -42,13 +42,13 @@
                 <div class="col-md-12">
                     <div class="col-md-12" style="padding-right: 0;margin-bottom: 5px;">
                         <div class="pull-right">
-                            <button class="btn btn-success" data-toggle="modal" data-target="#modal-default"><i class="fa fa-plus"></i> ‡πÄ‡∏û‡∏¥‡πà‡∏°‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•</button>
+                            <button class="btn btn-success" data-toggle="modal" data-target="#modal-default"><i class="fa fa-plus"></i> ‡æ‘Ë¡¢ÈÕ¡Ÿ≈</button>
                         </div>
                     </div>
                     <div class="clearfix"></div>
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏Ñ‡∏ì‡∏∞‡∏Å‡∏£‡∏£‡∏°‡∏Å‡∏≤‡∏£</h3>
+                            <h3 class="box-title">¢ÈÕ¡Ÿ≈§≥–°√√¡°“√</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">

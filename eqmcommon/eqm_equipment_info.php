@@ -1,3 +1,8 @@
+<?php
+	//---- INCLUDE session ***
+	include("../eqmlib/eqmsession.php");
+	require('../eqmlib/phpclass.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +18,6 @@
 	<!-- INCLUDE DataTable -->
         <?php include("../include/datatable.php"); ?>
     <!-- -------------- -->
-
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
 <div class="wrapper">
@@ -32,13 +36,7 @@
 
 
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                <b>FINANCE</b>DPT
-                <small>Version 1.0.0</small>
-            </h1>
-        </section>
+     
 
         <!-- Main content -->
         <section class="content">
@@ -47,53 +45,49 @@
                 <div class="col-md-12">
                     <div class="box box-success">
                         <div class="box-header with-border">
-                            <h3 class="box-title">เธเธฃเธฐเน€เธ เธ—เธเธฃเธธเธ เธฑเธ“เธ‘เน</h3>
+                            <h3 class="box-title">ข้อมูลครุภัณฑ์</h3>
                         </div>
                         <!-- /.box-header -->
                       <br>
-					  <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Position</th>
-						<th>Office</th>
-						<th>Age</th>
-						<th>Start date</th>
-						<th>Salary</th>
-					</tr>
-				</thead>
-				<tfoot>
-					<tr>
-						<th>Name</th>
-						<th>Position</th>
-						<th>Office</th>
-						<th>Age</th>
-						<th>Start date</th>
-						<th>Salary</th>
-					</tr>
-				</tfoot>
-				<tbody>
-					<tr>
-						<td>Tiger Nixon</td>
-						<td>System Architect</td>
-						<td>Edinburgh</td>
-						<td>61</td>
-						<td>2011/04/25</td>
-						<td>$320,800</td>
-					</tr>
 					
+				
+					  <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th class="text-center">รหัส</th>
+								<th class="text-center">ชื่อครุภัณฑ์</th>
+								<th class="text-center">สถานะการใช้งาน</th>
+								<th class="text-center">ประะเภท</th>
+								<th class="text-center">สถานที่ใช้งาน</th>
+								<th class="text-center">SN</th>
+								<th class="text-center">Prices</th>
+							</tr>
+						</thead>
+				<tbody>
+				<?php	
+
+				
+						$cmd  = "SELECT  c.no, c.name, st.no as stno ";
+						$cmd .= "FROM  ".getdbname("eqm_category","c")." ";
+						$cmd .= "left join ".getdbname("status","st")." on st.id = c.status ";
+						$cmd .= "where c.DelBy is null";
+						$catg = odbc_Exec($conn,$cmd);
+						while($Result = odbc_fetch_array($catg))
+                        {
+				?>
 					<tr>
-						<td>Donna Snider</td>
-						<td>Customer Support</td>
-						<td>New York</td>
-						<td>27</td>
-						<td>2011/01/25</td>
-						<td>$112,000</td>
+						<td ><?php echo $Result["no"]; ?></td>
+						<td><?php echo $Result["name"]; ?></td>
+						<td class="text-center"><?php echo $Result["stno"]; ?></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
 					</tr>
+						<?php } ?>
+					
 				</tbody>
 			</table>
-					  
-					  
                         <!-- /.box-body -->
                     </div>
                 </div>
