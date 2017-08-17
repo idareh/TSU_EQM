@@ -15,9 +15,6 @@
     <?php include("../include/top_script.php"); ?>
     <!-- ------------------ -->
 	
-	<!-- INCLUDE DataTable -->
-        <?php include("../include/datatable.php"); ?>
-    <!-- -------------- -->
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
 <div class="wrapper">
@@ -46,43 +43,46 @@
                     <div class="box box-success">
                         <div class="box-header with-border">
                             <h3 class="box-title">ข้อมูลครุภัณฑ์</h3>
+							<div class="pull-right">
+								<button type="button" class="btn btn-warning btn-sm text-black" >ค้นหา</button>
+								<button type="button" class="btn btn-warning btn-sm text-black" >เพิ่ม</button>
+								<button type="button" class="btn btn-warning btn-sm text-black" >แก้ไข</button>
+								<button type="button" class="btn btn-warning btn-sm text-black" >ปริ้น</button>
+								<a href="sql_eqm.php?mysession=<?php echo $mysession?>" type="button" class="btn btn-danger btn-sm text-black" >ปรับปรุงข้อมูล</a>
+							</div>
                         </div>
                         <!-- /.box-header -->
                       <br>
 					
 				
-					  <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+					  <table id="example1" class="table table-bordered table-striped text-sm">
 						<thead>
 							<tr>
-								<th class="text-center">รหัส</th>
+								<th class="text-center">รหัสบาร์โค้ด</th>
+								<th class="text-center">รหัสครุภัณฑ์</th>
 								<th class="text-center">ชื่อครุภัณฑ์</th>
-								<th class="text-center">สถานะการใช้งาน</th>
-								<th class="text-center">ประะเภท</th>
 								<th class="text-center">สถานที่ใช้งาน</th>
-								<th class="text-center">SN</th>
-								<th class="text-center">Prices</th>
+								<th class="text-center">สถานะการใช้งาน</th>
 							</tr>
 						</thead>
 				<tbody>
 				<?php	
 
 				
-						$cmd  = "SELECT  c.no, c.name, st.no as stno ";
-						$cmd .= "FROM  ".getdbname("eqm_category","c")." ";
-						$cmd .= "left join ".getdbname("status","st")." on st.id = c.status ";
-						$cmd .= "where c.DelBy is null";
-						$catg = odbc_Exec($conn,$cmd);
-						while($Result = odbc_fetch_array($catg))
+						$cmd  = "SELECT  e.* ";
+						$cmd .= "FROM  ".getdbname("equipm","e")." ";
+						$cmd .= "where e.DelBy is null";
+						$eqm = odbc_Exec($conn,$cmd);
+						while($Result = odbc_fetch_array($eqm))
                         {
 				?>
 					<tr>
+						<td ><?php echo $Result["barcode"]; ?></td>
 						<td ><?php echo $Result["no"]; ?></td>
-						<td><?php echo $Result["name"]; ?></td>
-						<td class="text-center"><?php echo $Result["stno"]; ?></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td ><?php echo $Result["name"]; ?></td>
+						<td ><?php echo $Result["location"]; ?></td>
+						<td><?php echo $Result["st_name"]; ?></td>
+					
 					</tr>
 						<?php } ?>
 					
@@ -115,7 +115,7 @@
 <!-- ./wrapper -->
 
 <!-- INCLUDE JS CORE-SCRIPT -->
-<?php include("../include/buttom_script_DataTB.php"); ?>
+<?php include("../include/buttom_script.php"); ?>
 <!-- ------------------ -->
 
 </body>

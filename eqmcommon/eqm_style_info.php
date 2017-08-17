@@ -15,9 +15,6 @@
     <?php include("../include/top_script.php"); ?>
     <!-- ------------------ -->
 	
-	<!-- INCLUDE DataTable -->
-        <?php include("../include/datatable.php"); ?>
-    <!-- -------------- -->
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
 <div class="wrapper">
@@ -46,29 +43,39 @@
                     <div class="box box-success">
                         <div class="box-header with-border">
                             <h3 class="box-title">ลักษณะครุภัณฑ์</h3>
+							<div class="pull-right">
+								<button type="button" class="btn btn-warning btn-sm text-black" >ค้นหา</button>
+								<button type="button" class="btn btn-warning btn-sm text-black" >เพิ่ม</button>
+								<button type="button" class="btn btn-warning btn-sm text-black" >แก้ไข</button>
+								<button type="button" class="btn btn-warning btn-sm text-black" >ปริ้น</button>
+							
+								<a href="sql_style.php?mysession=<?php echo $mysession?>" type="button" class="btn btn-danger btn-sm text-black" >ปรับปรุงข้อมูล</a>
+							</div>
                         </div>
+						
                         <!-- /.box-header -->
                       <br>
 					<div class="row">
 						<div class="col-md-1"></div>
 						<div class="col-md-10">
 						
-					  <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+					  <table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
 								<th class="text-center">รหัส</th>
 								<th class="text-center">ชื่อลักษณะครุภัณฑ์</th>
+								<th class="text-center">หน่วย</th>
 								<th class="text-center">สถานะการใช้งาน</th>
 							</tr>
 						</thead>
 				<tbody>
 				<?php	
 
-				
-						$cmd  = "SELECT  c.no, c.name, st.no as stno ";
-						$cmd .= "FROM  ".getdbname("eqm_category","c")." ";
-						$cmd .= "left join ".getdbname("status","st")." on st.id = c.status ";
-						$cmd .= "where c.DelBy is null";
+						$cmd  = "SELECT  est.no, est.name,ut.name as uname ,st.no as stno ";
+						$cmd .= "FROM  ".getdbname("eqm_style","est")." ";
+						$cmd .= "left join ".getdbname("eqm_unit","ut")." on ut.id = est.unitid ";
+						$cmd .= "left join ".getdbname("status","st")." on st.id = est.status ";
+						$cmd .= "where est.DelBy is null ";
 						$catg = odbc_Exec($conn,$cmd);
 						while($Result = odbc_fetch_array($catg))
                         {
@@ -76,6 +83,7 @@
 					<tr>
 						<td ><?php echo $Result["no"]; ?></td>
 						<td><?php echo $Result["name"]; ?></td>
+						<td><?php echo $Result["uname"]; ?></td>
 						<td class="text-center"><?php echo $Result["stno"]; ?></td>
 					</tr>
 						<?php } ?>
@@ -112,7 +120,7 @@
 <!-- ./wrapper -->
 
 <!-- INCLUDE JS CORE-SCRIPT -->
-<?php include("../include/buttom_script_DataTB.php"); ?>
+<?php include("../include/buttom_script.php"); ?>
 <!-- ------------------ -->
 
 </body>

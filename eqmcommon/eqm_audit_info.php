@@ -1,3 +1,8 @@
+<?php
+	//---- INCLUDE session ***
+	include("../eqmlib/eqmsession.php");
+	require('../eqmlib/phpclass.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>

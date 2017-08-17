@@ -1,0 +1,19 @@
+ttf2pt1 -b -L cp874.map angsa.ttf angsa 
+
+angsa.ttf เป็น font ใน windows เราอ่ะครับ ไป copy มาก็ได้ จะได้ไม่ต้องใส่ path 
+angsa คือชื่อที่เราจะตั้ง 
+
+หลังจากนั้นจะได้ ไฟล์มา 2 ตัว คือ 
+angsa.afm กับ angsa.pfb 
+
+หลังจากนั้น copy ทั้งสองตัวไปที่ /font/makefont 
+แล้วเขียน ไฟล์ php ตัวนึง ชื่ออะไรก็ได้ เพื่อรัน makefont.php ดังนี้ 
+
+MakeFont('angsa.pfb','angsa.afm','cp874'); 
+
+จะได้ file 2ตัวออกมา angsa.php and angsa.z 
+
+copy ไปวางที่ /font 
+ใช้คำสั่ง addfont 
+
+$pdf->AddFont('angsa','','angsa.php');

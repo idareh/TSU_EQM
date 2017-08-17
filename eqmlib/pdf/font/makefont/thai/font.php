@@ -1,0 +1,13 @@
+<?php
+require('makefont.php');
+MakeFont('angsai.pfb','angsai.afm','cp874'); 
+MakeFont('angsaz.pfb','angsaz.afm','cp874'); 
+MakeFont('browa.pfb','browa.afm','cp874'); 
+MakeFont('browab.pfb','browab.afm','cp874'); 
+MakeFont('browai.pfb','browai.afm','cp874'); 
+MakeFont('browaz.pfb','browaz.afm','cp874'); 
+MakeFont('cordia.pfb','cordia.afm','cp874'); 
+MakeFont('cordiab.pfb','cordiab.afm','cp874'); 
+MakeFont('cordiai.pfb','cordiai.afm','cp874'); 
+MakeFont('cordiaz.pfb','cordiaz.afm','cp874'); 
+?>

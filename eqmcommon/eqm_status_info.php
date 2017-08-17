@@ -15,9 +15,7 @@
     <?php include("../include/top_script.php"); ?>
     <!-- ------------------ -->
 	
-	<!-- INCLUDE DataTable -->
-        <?php include("../include/datatable.php"); ?>
-    <!-- -------------- -->
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
 <div class="wrapper">
@@ -46,6 +44,12 @@
                     <div class="box box-success">
                         <div class="box-header with-border">
                             <h3 class="box-title">สถานะการใช้งานครุภัณฑ์</h3>
+							<div class="pull-right">
+								<button type="button" class="btn btn-warning btn-sm text-black" >ค้นหา</button>
+								<button type="button" class="btn btn-warning btn-sm text-black" >เพิ่ม</button>
+								<button type="button" class="btn btn-warning btn-sm text-black" >แก้ไข</button>
+								<button type="button" class="btn btn-warning btn-sm text-black" >ปริ้น</button>
+							</div>
                         </div>
                         <!-- /.box-header -->
                       <br>
@@ -53,7 +57,7 @@
 					<div class="row">
 					<div class="col-md-1"></div>
 					<div class="col-md-10">
-					  <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+					  <table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
 								<th class="text-center">ชื่อสถานะการใช้งานครุภัณฑ์</th>
@@ -109,7 +113,7 @@
 <!-- ./wrapper -->
 
 <!-- INCLUDE JS CORE-SCRIPT -->
-<?php include("../include/buttom_script_DataTB.php"); ?>
+<?php include("../include/buttom_script.php"); ?>
 <!-- ------------------ -->
 
 </body>

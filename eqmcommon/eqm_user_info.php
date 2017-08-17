@@ -15,9 +15,6 @@
     <?php include("../include/top_script.php"); ?>
     <!-- ------------------ -->
 	
-	<!-- INCLUDE DataTable -->
-        <?php include("../include/datatable.php"); ?>
-    <!-- -------------- -->
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
 <div class="wrapper">
@@ -46,30 +43,35 @@
                     <div class="box box-success">
                         <div class="box-header with-border">
                             <h3 class="box-title">ข้อมูลบุคลากร</h3>
+							<div class="pull-right">
+								<button type="button" class="btn btn-warning btn-sm text-black" >ค้นหา</button>
+								<button type="button" class="btn btn-warning btn-sm text-black" >เพิ่ม</button>
+								<button type="button" class="btn btn-warning btn-sm text-black" >แก้ไข</button>
+								<button type="button" class="btn btn-warning btn-sm text-black" >ปริ้น</button>
+							</div>
                         </div>
                         <!-- /.box-header -->
                       <br>
-					
-					<div class="row">
-						<div class="col-md-1"></div>
-						<div class="col-md-10">
-					
-					  <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+				
+					  <table id="example1" class="table table-bordered table-striped text-sm">
 						<thead>
 							<tr>
 								<th class="text-center">รหัส</th>
 								<th class="text-center">ชื่อข้อมูลบุคลากร</th>
-								<th class="text-center">สถานะการใช้งาน</th>
+								<th class="text-center">ที่อยู่</th>
+								<th class="text-center">เบอร์โทรศัพท์</th>
+								<th class="text-center">เลขที่เสียภาษี</th>
+								<th class="text-center">สถานะ</th>
 							</tr>
 						</thead>
 				<tbody>
 				<?php	
 
 				
-						$cmd  = "SELECT  c.no, c.name, st.no as stno ";
-						$cmd .= "FROM  ".getdbname("eqm_category","c")." ";
-						$cmd .= "left join ".getdbname("status","st")." on st.id = c.status ";
-						$cmd .= "where c.DelBy is null";
+						$cmd  = "SELECT  u.*, st.no as stno ";
+						$cmd .= "FROM  ".getdbname("users","u")." ";
+						$cmd .= "left join ".getdbname("status","st")." on st.id = u.status ";
+						$cmd .= "where u.DelBy is null";
 						$catg = odbc_Exec($conn,$cmd);
 						while($Result = odbc_fetch_array($catg))
                         {
@@ -77,14 +79,15 @@
 					<tr>
 						<td ><?php echo $Result["no"]; ?></td>
 						<td><?php echo $Result["name"]; ?></td>
+						<td><?php echo $Result["address"]; ?></td>
+						<td><?php echo $Result["phone"]; ?></td>
+						<td><?php echo $Result["texpayers"]; ?></td>
 						<td class="text-center"><?php echo $Result["stno"]; ?></td>
 					</tr>
 						<?php } ?>
 					
 				</tbody>
-			</table>
-					  </div>
-					  </div>
+			</table><br>
                         <!-- /.box-body -->
                     </div>
                 </div>
@@ -112,7 +115,7 @@
 <!-- ./wrapper -->
 
 <!-- INCLUDE JS CORE-SCRIPT -->
-<?php include("../include/buttom_script_DataTB.php"); ?>
+<?php include("../include/buttom_script.php"); ?>
 <!-- ------------------ -->
 
 </body>

@@ -36,8 +36,8 @@
                     <span class="pull-right-container"></span>
                 </a>
             </li>
-			<li <?php if($url == 'eqm_audit.php'){echo 'class="active" '; }else { echo ''; } ?> >
-                <a href="<?php $path ?>eqm_audit.php?mysession=<?php echo $mysession?>">
+			<li <?php if($url == 'eqm_audit_info.php'){echo 'class="active" '; }else { echo ''; } ?> >
+                <a href="<?php $path ?>eqm_audit_info.php?mysession=<?php echo $mysession?>">
                     <i class="fa fa-edit"></i> <span>ตรวจสอบครุภัณฑ์</span>
                     <span class="pull-right-container"></span>
                 </a>
@@ -57,7 +57,7 @@
                 </ul>
             </li>
 
-			<li class="treeview <?php if($url == '#'){} else { echo ''; } ?>">
+			<li class="treeview <?php if($url == 'report_eqm.php' || $url == 'report_eqm_reject.php'  || $url == 'report_eqm_shift.php' || $url == 'report_eqm_purch.php' ){echo 'active';} else { echo ''; } ?>">
                 <a href="#">
                     <i class="fa fa-file-text-o"></i> <span>รายงาน ครุภัณฑ์   </span>
                     <span class="pull-right-container">
@@ -65,24 +65,24 @@
 					</span>
                 </a>
                 <ul class="treeview-menu">
-                    <li <?php if($url == '#'){echo 'class="active" '; }else { echo ''; } ?>><a href="<?php $path ?>#">
-						<i class="fa fa-file-text-o text-aqua"></i> รายงานผลการตรวจสอบครุภัณฑ์  </a>
+                    <li <?php if($url == 'report_eqm.php'){echo 'class="active" '; }else { echo ''; } ?>>
+						<a href="<?php $path ?>report_eqm.php?mysession=<?php echo $mysession?>"><i class="fa fa-file-text-o text-aqua"></i> รายงานผลการตรวจสอบครุภัณฑ์  </a>
 					</li>
-                    <li <?php if($url == '#'){echo 'class="active" '; }else { echo ''; } ?>><a href="<?php $path ?>#">
-						<i class="fa fa-file-text-o text-red"></i> รายงานผลการจำหน่ายครุภัณฑ์</a>
+                    <li <?php if($url == 'report_eqm_reject.php'){echo 'class="active" '; }else { echo ''; } ?>>
+						<a href="<?php $path ?>report_eqm_reject.php?mysession=<?php echo $mysession?>"><i class="fa fa-file-text-o text-red"></i> รายงานผลการจำหน่ายครุภัณฑ์</a>
 					</li>
-                    <li <?php if($url == '#'){echo 'class="active" '; }else { echo ''; } ?>><a href="<?php $path ?>#">
-						<i class="fa fa-file-text-o text-red"></i> รายงานผลการโอนครุภัณฑ์</a>
+                    <li <?php if($url == 'report_eqm_shift.php'){echo 'class="active" '; }else { echo ''; } ?>>
+						<a href="<?php $path ?>report_eqm_shift.php?mysession=<?php echo $mysession?>"><i class="fa fa-file-text-o text-red"></i> รายงานผลการโอนครุภัณฑ์</a>
 					</li>
-					<li <?php if($url == '#'){echo 'class="active" '; }else { echo ''; } ?>><a href="<?php $path ?>#">
-						<i class="fa fa-file-text-o text-red"></i> รายงานผลการจัดซื้อจัดจ้าง</a>
+					<li <?php if($url == 'report_eqm_purch.php'){echo 'class="active" '; }else { echo ''; } ?>>
+						<a href="<?php $path ?>report_eqm_purch.php?mysession=<?php echo $mysession?>"><i class="fa fa-file-text-o text-red"></i> รายงานผลการจัดซื้อจัดจ้าง</a>
 					</li>
                 </ul>
             </li>
 
 
 
-				<li class="treeview <?php if($url == 'eqm_equipment_info.php' || $url == 'eqm_category_info.php' || $url == 'eqm_type_info.php' || $url == 'eqm_style_info.php' || $url == 'eqm_location_info.php' || $url =='eqm_status_info.php'){echo 'active'; }else { echo ''; } ?>">
+				<li class="treeview <?php if($url == 'eqm_equipment_info.php' || $url == 'eqm_category_info.php' || $url == 'eqm_type_info.php' || $url == 'eqm_style_info.php' || $url == 'eqm_location_info.php' || $url =='eqm_status_info.php' || $url == 'import_eqm.php' || $url == 'import_eqm_reject.php' ){echo 'active'; }else { echo ''; } ?>">
                 <a href="#">
                     <i class="fa fa-book"></i> <span>ข้อมูลครุภัณฑ์</span>
                     <span class="pull-right-container">
@@ -108,11 +108,11 @@
                     <li <?php if($url == 'eqm_status_info.php'){echo 'class="active" '; }else { echo ''; } ?>>
 						<a href="<?php $path ?>eqm_status_info.php?mysession=<?php echo $mysession?>"><i class="fa fa-circle-o text-aqua"></i>สถานะการใช้งาน</a>
 					</li>
-					<li <?php if($url == '#'){echo 'class="active" '; }else { echo ''; } ?>><a href="<?php $path ?>#">
-						<i class="fa fa-circle-o text-yellow"></i>นำเข้าข้อมูลครุภัณฑ์</a>
+					<li <?php if($url == 'import_eqm.php'){echo 'class="active" '; }else { echo ''; } ?>>
+						<a href="<?php $path ?>import_eqm.php?mysession=<?php echo $mysession?>"><i class="fa fa-circle-o text-yellow"></i>นำเข้าข้อมูลครุภัณฑ์</a>
 					</li>
-					<li <?php if($url == '#'){echo 'class="active" '; }else { echo ''; } ?>><a href="<?php $path ?>#">
-						<i class="fa fa-circle-o text-yellow"></i>นำเข้าข้อมูลการจำหน่ายครุภัณฑ์</a>
+					<li <?php if($url == 'import_eqm_reject.php'){echo 'class="active" '; }else { echo ''; } ?>>
+						<a href="<?php $path ?>import_eqm_reject.php?mysession=<?php echo $mysession?>"><i class="fa fa-circle-o text-yellow"></i>นำเข้าข้อมูลการจำหน่ายครุภัณฑ์</a>
 					</li>
                 </ul>
             </li>
@@ -140,8 +140,8 @@
                 </ul>
             </li>
 
-			<li <?php if($url == 'backup.php'){echo 'class="active" '; }else { echo ''; } ?> >
-                <a href="<?php $path ?>backup.php?mysession=<?php echo $mysession?>">
+			<li <?php if($url == 'eqm_backup.php'){echo 'class="active" '; }else { echo ''; } ?> >
+                <a href="<?php $path ?>eqm_backup.php?mysession=<?php echo $mysession?>">
                     <i class="fa fa-database text-yellow"></i> <span>สำรองข้อมูลระบบ</span>
                     <span class="pull-right-container"></span>
                 </a>
